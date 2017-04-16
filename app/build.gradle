@@ -1,13 +1,17 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
+/*
+./gradlew clean build bintrayUpload -PbintrayUser=jeyechoo -PbintrayKey=7b5360461ef7851132f69e9875599942d6f529ff -PdryRun=false
+*/
+
 publish {
     userOrg = 'jeyechoo'
     groupId = 'com.jey_dev'
     artifactId = 'JeYDialogLibrary'
-    publishVersion = '1.0.0'
+    publishVersion = '1.2.0'
     desc = ''
-    website = 'https://github.com/JeongYoungHoon/JeYDialogLibrary'
+    website = "https://github.com/JeongYoungHoon/${artifactId}"
     issueTracker = "${website}/issues"
     repository = "${website}.git"
 }
@@ -16,12 +20,10 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-//        applicationId "com.jey_dev.lib.dialog"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0.0"
-//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -37,5 +39,6 @@ dependencies {
 //        exclude group: 'com.android.support', module: 'support-annotations'
 //    })
     compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:design:25.3.1'
+//    testCompile 'junit:junit:4.12'
 }

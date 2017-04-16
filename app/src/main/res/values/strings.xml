@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">JeYDialogLibrary</string>
     <string name="close">Close</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>

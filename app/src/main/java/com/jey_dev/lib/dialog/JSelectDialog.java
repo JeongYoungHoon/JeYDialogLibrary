@@ -3,6 +3,7 @@ package com.jey_dev.lib.dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -140,13 +141,14 @@ JDialogInterface.OnMenuClickListener mOnItemSelectListener;
 		
 		if(isTitle){
 			tvParams.setMargins(util.dpToPx(ctx, 10), util.dpToPx(ctx, 0), util.dpToPx(ctx, 10), util.dpToPx(ctx, 0));
-			parent.setPadding(util.dpToPx(ctx, 0), util.dpToPx(ctx, 0), util.dpToPx(ctx, 0), util.dpToPx(ctx, 10));
+			parent.setPadding(util.dpToPx(ctx, 10), util.dpToPx(ctx, 10), util.dpToPx(ctx, 10), util.dpToPx(ctx, 10));
 			TextView titleTv=new TextView(ctx);
 			LinearLayout.LayoutParams titleParams=new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-			titleTv.setPadding(util.dpToPx(ctx, 10), util.dpToPx(ctx, 10), util.dpToPx(ctx, 10), util.dpToPx(ctx, 10));
+			titleTv.setPadding(util.dpToPx(ctx, 0), util.dpToPx(ctx, 0), util.dpToPx(ctx, 0), util.dpToPx(ctx, 10));
 			titleTv.setGravity(Gravity.CENTER);
-			titleTv.setTextSize(ctx.getResources().getDimensionPixelOffset(R.dimen.jey_dialog_title_text_size));
-			titleTv.setTextColor(Color.WHITE);
+//			titleTv.setTextSize(16);
+			titleTv.setTextSize(TypedValue.COMPLEX_UNIT_PX, ctx.getResources().getDimension(R.dimen.jey_dialog_title_text_size));
+			titleTv.setTextColor(Color.BLACK);
 			titleTv.setLayoutParams(titleParams);
 			titleTv.setText(titleStr);
 //			if(newApi){
@@ -197,7 +199,8 @@ JDialogInterface.OnMenuClickListener mOnItemSelectListener;
 //				tv.setBackgroundDrawable(ImageUtil.getTrBg(ctx));
 //			}
 			tv.setBackgroundResource(R.color.colorTr);
-			tv.setTextSize(ctx.getResources().getDimensionPixelOffset(R.dimen.jey_dialog_msg_text_size));
+//			tv.setTextSize(ctx.getResources().getDimen(R.dimen.jey_dialog_msg_text_size));
+			tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, ctx.getResources().getDimension(R.dimen.jey_dialog_msg_text_size));
 			tv.setLayoutParams(tvParams);
 			tv.setMinEms(10);
 			tv.setMaxEms(15);
